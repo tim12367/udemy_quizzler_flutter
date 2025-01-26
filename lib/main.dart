@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() => runApp(Quizzler());
 
@@ -35,15 +36,13 @@ class _QuizPageState extends State<QuizPage> {
   question3: 'A slug\'s blood is green.', true,
   */
 
-  List<Icon> scoreKeeper = []; // 下方紀錄
-
-  List<String> questions = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.',
+  List<Question> questions = [
+    Question(questionText: "You can lead a cow down stairs but not up stairs.", questionAnswer: false),
+    Question(questionText: "Approximately one quarter of human bones are in the feet.", questionAnswer: true),
+    Question(questionText: "A slug's blood is green.", questionAnswer: true),
   ];
 
-  List<bool> answers = [false, true, true];
+  List<Icon> scoreKeeper = []; // 下方紀錄
 
   int questionIndex = 0;
 
@@ -59,7 +58,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionIndex],
+                questions[questionIndex].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -85,7 +84,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 // 判斷答案是否正確
-                bool rightAnswer = answers[questionIndex];
+                bool rightAnswer = questions[questionIndex].questionAnswer;
 
                 if (rightAnswer) {
                   print("you are right!");
@@ -122,7 +121,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 // 判斷答案是否正確
-                bool rightAnswer = answers[questionIndex];
+                bool rightAnswer = questions[questionIndex].questionAnswer;
 
                 if (!rightAnswer) {
                   print("you are right!");
