@@ -19,16 +19,19 @@ class QuizBrain {
     Question('In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.', true),
   ];
 
+  // 下一題
   void nextQuestion() {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
     }
   }
 
+  // 獲取當前答案
   String getQuestionText() {
     return _questionBank[_questionNumber].questionText;
   }
 
+  // 獲取當前題目
   bool getQuestionAnswer() {
     return _questionBank[_questionNumber].questionAnswer;
   }
