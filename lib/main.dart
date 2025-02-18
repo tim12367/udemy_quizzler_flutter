@@ -76,18 +76,24 @@ class _QuizPageState extends State<QuizPage> {
 
                 if (rightAnswer) {
                   print("you are right!");
-                } else {
-                  print("you are wrong!");
-                }
-
-                setState(() {
-                  quizBrain.nextQuestion(); // 前往下一題
                   scoreKeeper.add(
                     Icon(
                       Icons.check,
                       color: Colors.green,
                     ),
                   );
+                } else {
+                  print("you are wrong!");
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
+                }
+
+                setState(() {
+                  quizBrain.nextQuestion(); // 前往下一題
                 });
               },
             ),
@@ -113,16 +119,22 @@ class _QuizPageState extends State<QuizPage> {
 
                 if (!rightAnswer) {
                   print("you are right!");
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
                 } else {
                   print("you are wrong!");
-                }
-
-                setState(() {
-                  quizBrain.nextQuestion(); // 前往下一題
                   scoreKeeper.add(Icon(
                     Icons.close,
                     color: Colors.red,
                   ));
+                }
+
+                setState(() {
+                  quizBrain.nextQuestion(); // 前往下一題
                 });
               },
             ),
