@@ -33,6 +33,32 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = []; // 下方紀錄
+  void checkAnswer(bool userPickedAnswer) {
+    // 判斷答案是否正確
+    bool rightAnswer = quizBrain.getQuestionAnswer();
+
+    setState(() {
+      if (userPickedAnswer == rightAnswer) {
+        print("you are right!");
+        scoreKeeper.add(
+          Icon(
+            Icons.check,
+            color: Colors.green,
+          ),
+        );
+      } else {
+        print("you are wrong!");
+        scoreKeeper.add(
+          Icon(
+            Icons.close,
+            color: Colors.red,
+          ),
+        );
+      }
+
+      quizBrain.nextQuestion(); // 前往下一題
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,30 +97,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                // 判斷答案是否正確
-                bool rightAnswer = quizBrain.getQuestionAnswer();
-
-                if (rightAnswer) {
-                  print("you are right!");
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.check,
-                      color: Colors.green,
-                    ),
-                  );
-                } else {
-                  print("you are wrong!");
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.close,
-                      color: Colors.red,
-                    ),
-                  );
-                }
-
-                setState(() {
-                  quizBrain.nextQuestion(); // 前往下一題
-                });
+                checkAnswer(true);
               },
             ),
           ),
@@ -114,28 +117,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                // 判斷答案是否正確
-                bool rightAnswer = quizBrain.getQuestionAnswer();
-
-                if (!rightAnswer) {
-                  print("you are right!");
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.check,
-                      color: Colors.green,
-                    ),
-                  );
-                } else {
-                  print("you are wrong!");
-                  scoreKeeper.add(Icon(
-                    Icons.close,
-                    color: Colors.red,
-                  ));
-                }
-
-                setState(() {
-                  quizBrain.nextQuestion(); // 前往下一題
-                });
+                checkAnswer(false);
               },
             ),
           ),
