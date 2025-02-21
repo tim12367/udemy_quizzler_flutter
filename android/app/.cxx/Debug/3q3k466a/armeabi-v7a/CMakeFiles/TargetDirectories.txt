@@ -1,0 +1,2 @@
+C:/gitRepo/udemy_quizzler_flutter/android/app/.cxx/Debug/3q3k466a/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/gitRepo/udemy_quizzler_flutter/android/app/.cxx/Debug/3q3k466a/armeabi-v7a/CMakeFiles/rebuild_cache.dir

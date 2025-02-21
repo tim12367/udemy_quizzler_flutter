@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "C:\\code-space\\flutter_3.24.3-stable\\packages\\flutter_tools\\gradle\\src\\main\\groovy\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\code-space\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\gitRepo\\udemy_quizzler_flutter\\android\\app\\.cxx\\Debug\\3q3k466a\\armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\code-space\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\gitRepo\\udemy_quizzler_flutter\\android\\app\\.cxx\\Debug\\3q3k466a\\armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

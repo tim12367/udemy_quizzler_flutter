@@ -1,0 +1,1 @@
+C:\gitRepo\udemy_quizzler_flutter\build\app\intermediates\cxx\Debug\3q3k466a\obj\armeabi-v7a
