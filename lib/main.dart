@@ -47,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
         Alert(
           context: context,
           title: "您以回答完問題",
-          desc: "按下按鈕返回第一題",
+          desc: "按下任意按鈕或關閉，返回第一題",
           style: AlertStyle(
             backgroundColor: Colors.white38,
             titleStyle: TextStyle(color: Colors.white),
